@@ -7,6 +7,7 @@ import HomePage from "./pages/home.page";
 import DetailsPage from "./pages/details.page";
 import SettingsPage from "./pages/settings.page";
 import { createStackNavigator } from "@react-navigation/stack";
+import ScenariosPage from "./pages/scenarios.page";
 
 //Screen names
 const homeName = "Home";
@@ -39,7 +40,7 @@ function MainContainer() {
       })}
     >
       <Tab.Screen name={homeName} component={HomePage} />
-      <Tab.Screen name={detailsName} component={DetailsPage} />
+      <Tab.Screen name={detailsName} component={ScenariosPage} />
       <Tab.Screen name={settingsName} component={SettingsPage} />
     </Tab.Navigator>
   );
