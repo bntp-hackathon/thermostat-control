@@ -3,7 +3,6 @@ import { View, Image, Text, TouchableOpacity } from "react-native";
 import DialogButton from "react-native-dialog/lib/Button";
 import DialogContainer from "react-native-dialog/lib/Container";
 import DialogInput from "react-native-dialog/lib/Input";
-import DialogSwitch from "react-native-dialog/lib/Switch";
 
 function Thermostat({ name }) {
   const [visible, setVisible] = useState(false);

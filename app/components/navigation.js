@@ -5,16 +5,14 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 // Pages
 import HomePage from "./pages/home.page";
 import DetailsPage from "./pages/details.page";
-import SettingsPage from "./pages/settings.page";
-import { createStackNavigator } from "@react-navigation/stack";
+import AccountPage from "./pages/account.page";
 
 //Screen names
 const homeName = "Home";
 const detailsName = "Details";
-const settingsName = "Settings";
+const accountName = "Account";
 
 const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator();
 
 function MainContainer() {
   return (
@@ -29,8 +27,8 @@ function MainContainer() {
             iconName = focused ? "home" : "home-outline";
           } else if (rn === detailsName) {
             iconName = focused ? "list" : "list-outline";
-          } else if (rn === settingsName) {
-            iconName = focused ? "settings" : "settings-outline";
+          } else if (rn === accountName) {
+            iconName = focused ? "person" : "person-outline";
           }
 
           // You can return any component that you like here!
@@ -40,7 +38,7 @@ function MainContainer() {
     >
       <Tab.Screen name={homeName} component={HomePage} />
       <Tab.Screen name={detailsName} component={DetailsPage} />
-      <Tab.Screen name={settingsName} component={SettingsPage} />
+      <Tab.Screen name={accountName} component={AccountPage} />
     </Tab.Navigator>
   );
 }
