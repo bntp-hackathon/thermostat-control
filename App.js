@@ -1,10 +1,14 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import NavigationCompanent from '@react-navigation/native'
+import Ionic from 'react-native-vector-icons'
+
+
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Hello, React native!11</Text>
+      <Text>Hello, React native!</Text>
       <StatusBar style="auto" />
     </View>
   );
