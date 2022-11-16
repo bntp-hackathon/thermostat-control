@@ -1,5 +1,6 @@
-import { Image, Text, View } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 import { Card } from "react-native-paper";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 function AccountPage() {
   return (
@@ -10,7 +11,7 @@ function AccountPage() {
           flexDirection: "row",
           alignContent: "center",
           alignItems: "center",
-          marginBottom: 30,
+          marginBottom: 26,
         }}
       >
         <Image
@@ -24,7 +25,7 @@ function AccountPage() {
           }}
         />
         <View style={{ display: "flex", flexDirection: "column" }}>
-          <Text style={{ fontWeight: "bold" }}>User name</Text>
+          <Text style={{ fontWeight: "bold" }}>DD company</Text>
           <Text style={{ color: "gray", fontSize: 10 }}>
             Редактирование информации об учётной записи
           </Text>
@@ -103,6 +104,107 @@ function AccountPage() {
             />
             <Text style={{ width: 90, textAlign: "center" }}>SmartThings</Text>
           </View>
+        </Card.Content>
+      </Card>
+
+      <Card style={{ margin: 10 }}>
+        <Card.Content>
+          <TouchableOpacity style={{ marginBottom: 18 }}>
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+              }}
+            >
+              <View style={{ display: "flex", flexDirection: "row" }}>
+                <Ionicons
+                  name="home-outline"
+                  size={24}
+                  color={"black"}
+                  style={{ marginRight: 10 }}
+                />
+                <Text style={{ lineHeight: 26, alignSelf: "flex-start" }}>
+                  Управление домом
+                </Text>
+              </View>
+              <Image
+                source={require("../../../assets/bricks/right_arrow.png")}
+                style={{
+                  width: 30,
+                  height: 30,
+                }}
+              />
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={{ marginBottom: 18 }}>
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+              }}
+            >
+              <View style={{ display: "flex", flexDirection: "row" }}>
+                <Ionicons
+                  name="paper-plane-outline"
+                  size={24}
+                  color={"black"}
+                  style={{ marginRight: 10 }}
+                />
+                <Text style={{ lineHeight: 26, alignSelf: "flex-start" }}>
+                  Центр сообщений
+                </Text>
+              </View>
+              <Image
+                source={require("../../../assets/bricks/right_arrow.png")}
+                style={{
+                  width: 30,
+                  height: 30,
+                }}
+              />
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={{ marginBottom: 8 }}>
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+              }}
+            >
+              <View style={{ display: "flex", flexDirection: "row" }}>
+                <Ionicons
+                  name="help-circle-outline"
+                  size={24}
+                  color={"black"}
+                  style={{ marginRight: 10 }}
+                />
+                <Text style={{ lineHeight: 26, alignSelf: "flex-start" }}>
+                  FAQ и обратная связь
+                </Text>
+              </View>
+              <Image
+                source={require("../../../assets/bricks/right_arrow.png")}
+                style={{
+                  width: 30,
+                  height: 30,
+                }}
+              />
+            </View>
+          </TouchableOpacity>
+        </Card.Content>
+      </Card>
+
+      <Card style={{ margin: 10 }}>
+        <Card.Content>
+          <TouchableOpacity>
+            <Text style={{ textAlign: "center", color: "red", opacity: 0.5 }}>
+              Выход
+            </Text>
+          </TouchableOpacity>
         </Card.Content>
       </Card>
     </View>
