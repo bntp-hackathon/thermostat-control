@@ -1,9 +1,12 @@
+import { createStackNavigator } from "@react-navigation/stack";
 import * as React from "react";
 import { View, Text, Image, Button, StyleSheet, Alert } from "react-native";
+import MainContainer from "../navigation";
 
 function HomePage({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      
       <Image
         style={{ width: 250, height: 250 }}
         source={require("../../../assets/empty.png")}
@@ -17,7 +20,7 @@ function HomePage({ navigation }) {
         <Button
           title="Добавить устройство"
           color="#0879cf"
-          onPress={() => Alert.alert("Button with adjusted color pressed")}
+          onPress={() => navigation.navigate("Add device")}
         />
       </View>
     </View>
