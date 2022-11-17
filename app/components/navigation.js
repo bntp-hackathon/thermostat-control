@@ -4,12 +4,12 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 
 // Pages
 import HomePage from "./pages/home.page";
-import DetailsPage from "./pages/details.page";
 import AccountPage from "./pages/account.page";
+import OtherProductsPage from "./pages/other-products.page";
 
 //Screen names
 const homeName = "Home";
-const detailsName = "Details";
+const otherProductsName = "Other products";
 const accountName = "Account";
 
 const Tab = createBottomTabNavigator();
@@ -25,19 +25,18 @@ function MainContainer() {
 
           if (rn === homeName) {
             iconName = focused ? "home" : "home-outline";
-          } else if (rn === detailsName) {
+          } else if (rn === otherProductsName) {
             iconName = focused ? "list" : "list-outline";
           } else if (rn === accountName) {
             iconName = focused ? "person" : "person-outline";
           }
 
-          // You can return any component that you like here!
           return <Ionicons name={iconName} size={size} color={color} />;
         },
       })}
     >
       <Tab.Screen name={homeName} component={HomePage} />
-      <Tab.Screen name={detailsName} component={DetailsPage} />
+      <Tab.Screen name={otherProductsName} component={OtherProductsPage} />
       <Tab.Screen name={accountName} component={AccountPage} />
     </Tab.Navigator>
   );
