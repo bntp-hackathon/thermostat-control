@@ -1,84 +1,138 @@
 import React, { useState } from "react";
-import { Button, Pressable, StyleSheet, Text, View } from "react-native";
-import { TextInput } from "react-native-gesture-handler";
-import CheckBox from '@react-native-community/checkbox';
-import DatePicker from 'react-native-modern-datepicker';
-import DialogContainer from 'react-native-dialog/lib/Container';
-import DialogInput from "react-native-dialog/lib/Input";
+import { Text, TouchableOpacity, View, Image, StyleSheet } from "react-native";
+import { Card } from "react-native-paper";
 
-function AddScenarioPage() {
+function AddScenarioPage({ navigation }) {
     const [text, onChangeText] = useState("");
     const [isSelected, setSelection] = useState(false);
     const [time, setTime] = useState('');
     const [visible, setVisible] = useState(false);
 
     return (
-        <View>
-            <TextInput
-                style={styles.input}
-                onChangeText={onChangeText}
-                value={text}
-            />
-            {/* <CheckBox
-                disabled={false}
-                value={isSelected}
-                onValueChange={(newValue) => setSelection(newValue)}
-            /> */}
-            {/* <Text>В один клик</Text>
-            <Text>Test</Text> */}
-            <View style={{ flex: 0, alignItems: "center", justifyContent: "center" }}>
-                <Pressable style={styles.buttonTime} onPress={() => setVisible(true)}>
-                    <Text style={styles.text}>Время</Text>
-                </Pressable>
-                <DialogContainer visible={visible}>
-                    <DatePicker
-                        mode="time"
-                        style={styles.time}
-                        minuteInterval={3}
-                        onTimeChange={(selectedTime) => {
-                            setVisible(false);
-                            setTime(selectedTime);
-                        }}
-                    />
-                </DialogContainer>
-            </View>
+        <View style={{ padding: 10 }}>
+            <Card style={{ marginBottom: 10 }}>
+                <View style={{ display: "flex", flexDirection: "row" }}>
+                    <Image
+                        source={require("../../../assets/bricks/touch.png")}
+                        style={{
+                            width: 30,
+                            height: 60,
+                            marginTop: 10,
+                            marginLeft: 20,
+                            marginRight: 5
+                        }} />
+                    <TouchableOpacity onPress={() => navigation.navigate("Instant scenario")}>
+                        <Card.Content
+                            style={styles.cardContent}>
+                            <Text style={styles.title}>Мгновенный сценарий</Text>
+                            <Text style={styles.content}>Пример: выключение всех светильников в спальне одним касанием</Text>
+                        </Card.Content>
+                    </TouchableOpacity>
+
+                    <Image
+                        source={require("../../../assets/bricks/right_arrow.png")}
+                        style={{
+                            width: 30,
+                            height: 30,
+                            marginTop: 25,
+                            marginRight: 5
+                        }} />
+                </View>
+            </Card>
+            <Card style={{ borderBottomLeftRadius: 0, borderBottomRightRadius: 0 }}>
+                <View style={{ display: "flex", flexDirection: "row" }}>
+                    <Image source={require("../../../assets/bricks/sun.png")}
+                        style={{
+                            width: 30,
+                            height: 60,
+                            marginTop: 5,
+                            marginLeft: 20,
+                            marginRight: 5
+                        }} >
+                    </Image>
+                    <Card.Content style={styles.cardContent}>
+                        <Text style={styles.title}>При изменении погодных условий</Text>
+                        <Text style={styles.content}>Пример: когда температура превысит 28C</Text>
+                    </Card.Content>
+                    <Image
+                        source={require("../../../assets/bricks/right_arrow.png")}
+                        style={{
+                            width: 30,
+                            height: 30,
+                            marginTop: 20,
+                            marginRight: 5
+                        }} />
+                </View>
+            </Card>
+            <Card style={{ borderRadius: 0 }}>
+                <View style={{ display: "flex", flexDirection: "row" }}>
+                    <Image source={require("../../../assets/bricks/light.png")}
+                        style={{
+                            width: 30,
+                            height: 60,
+                            marginTop: 5,
+                            marginLeft: 20,
+                            marginRight: 5
+                        }} />
+                    <Card.Content style={styles.cardContent}>
+                        <Text style={styles.title}>При изменении место положения</Text>
+                        <Text style={styles.content}>Пример: после того, как выйдите из дома</Text>
+                    </Card.Content>
+                    <Image
+                        source={require("../../../assets/bricks/right_arrow.png")}
+                        style={{
+                            width: 30,
+                            height: 30,
+                            marginTop: 18,
+                            marginRight: 5
+                        }} />
+                </View>
+            </Card>
+            <Card style={{ borderTopLeftRadius: 0, borderTopRightRadius: 0 }}>
+                <View style={{ display: "flex", flexDirection: "row" }}>
+                    <Image source={require("../../../assets/bricks/clock.png")}
+                        style={{
+                            width: 30,
+                            height: 50,
+                            marginTop: 8,
+                            marginLeft: 20,
+                        }} />
+                    <Card.Content style={styles.cardContent}>
+                        <Text style={styles.title}>Таймер</Text>
+                        <Text style={styles.content}>Пример: каждое утро в 7:00</Text>
+                    </Card.Content>
+                    <Image
+                        source={require("../../../assets/bricks/right_arrow.png")}
+                        style={{
+                            width: 30,
+                            height: 30,
+                            marginTop: 17,
+                            marginRight: 5
+                        }} />
+                </View>
+            </Card>
         </View>
     )
-
 }
 
 const styles = StyleSheet.create({
-    input: {
-        height: 40,
-        margin: 12,
-        backgroundColor: 'white',
-        borderWidth: 1,
-        borderColor: 'grat',
-        borderRadius: 10,
-        padding: 10,
+    cardContent: {
+        width: 305,
+        paddingBottom: 10,
+        display: "flex",
+        justifyContent: "center",
     },
 
-    buttonTime: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingVertical: 12,
-        paddingHorizontal: 32,
-        borderRadius: 4,
-        elevation: 3,
-        backgroundColor: 'black',
+    title: {
+        fontSize: 15,
+        marginBottom: 5,
+        marginTop: 10,
     },
 
-    text: {
-        fontSize: 16,
-        lineHeight: 21,
-        fontWeight: 'bold',
-        letterSpacing: 0.25,
-        color: 'white',
-    },
-
-    time: {
-        height: 20,
+    content: {
+        fontSize: 12,
+        color: "gray",
     }
-});
+})
 
 export default AddScenarioPage;

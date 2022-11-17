@@ -9,7 +9,7 @@ import AccountPage from "./pages/account.page";
 
 //Screen names
 const homeName = "Home";
-const detailsName = "Details";
+const scenariosName = "Details";
 const accountName = "Account";
 
 const Tab = createBottomTabNavigator();
@@ -25,7 +25,7 @@ function MainContainer() {
 
           if (rn === homeName) {
             iconName = focused ? "home" : "home-outline";
-          } else if (rn === detailsName) {
+          } else if (rn === scenariosName) {
             iconName = focused ? "list" : "list-outline";
           } else if (rn === accountName) {
             iconName = focused ? "person" : "person-outline";
@@ -37,7 +37,7 @@ function MainContainer() {
       })}
     >
       <Tab.Screen name={homeName} component={HomePage} />
-      <Tab.Screen name={detailsName} component={ScenariosPage} />
+      <Tab.Screen name={scenariosName} component={ScenariosPage} />
       <Tab.Screen name={accountName} component={AccountPage} />
     </Tab.Navigator>
   );
