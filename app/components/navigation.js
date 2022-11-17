@@ -40,8 +40,8 @@ function MainContainer() {
       })}
     >
       <Tab.Screen name={homeName} component={HomePage} />
-      <Tab.Screen name={otherProductsName} component={OtherProductsPage} />
       <Tab.Screen name={scenariosName} component={ScenariosPage} />
+      <Tab.Screen name={otherProductsName} component={OtherProductsPage} />
       <Tab.Screen name={accountName} component={AccountPage} />
     </Tab.Navigator>
   );
