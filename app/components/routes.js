@@ -5,6 +5,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import AddDevicePage from "./pages/add-device.page";
 import HomePage from "./pages/home.page";
 import MainContainer from "./navigation";
+import AddScenarioPage from "./pages/add-scenario.page";
+import InstantScenario from "./pages/instant.scenario";
 
 const GlobalStack = createStackNavigator();
 
@@ -17,7 +19,9 @@ function Routes() {
           component={MainContainer}
           options={{ headerShown: false }}
         />
+        <GlobalStack.Screen name="Add scenario" component={AddScenarioPage} />
         <GlobalStack.Screen name="Add device" component={AddDevicePage} />
+        <GlobalStack.Screen name="Instant scenario" component={InstantScenario} />
       </GlobalStack.Navigator>
     </NavigationContainer>
   );
