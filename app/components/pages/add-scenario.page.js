@@ -1,13 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Text, TouchableOpacity, View, Image, StyleSheet } from "react-native";
 import { Card } from "react-native-paper";
 
 function AddScenarioPage({ navigation }) {
-    const [text, onChangeText] = useState("");
-    const [isSelected, setSelection] = useState(false);
-    const [time, setTime] = useState('');
-    const [visible, setVisible] = useState(false);
-
     return (
         <View style={{ padding: 10 }}>
             <Card style={{ marginBottom: 10 }}>
@@ -96,6 +91,7 @@ function AddScenarioPage({ navigation }) {
                             height: 50,
                             marginTop: 8,
                             marginLeft: 20,
+                            marginRight: 5
                         }} />
                     <Card.Content style={styles.cardContent}>
                         <Text style={styles.title}>Таймер</Text>

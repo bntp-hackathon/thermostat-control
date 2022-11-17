@@ -1,8 +1,12 @@
+import { useContext } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { Card } from "react-native-paper";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { AuthContext } from "../../context/auth.context";
 
 function AccountPage() {
+  const { logout } = useContext(AuthContext);
+
   return (
     <View>
       <View
@@ -200,7 +204,7 @@ function AccountPage() {
 
       <Card style={{ margin: 10 }}>
         <Card.Content>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={logout}>
             <Text style={{ textAlign: "center", color: "red", opacity: 0.5 }}>
               Выход
             </Text>

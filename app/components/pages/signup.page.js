@@ -1,34 +1,24 @@
-import React, { useContext, useState } from "react";
 import { StyleSheet, View, Pressable, Text, Image, TouchableOpacity } from "react-native";
 import { Card, TextInput } from "react-native-paper";
-import { AuthContext } from "../../context/auth.context";
 
-const LOGIN_URL = 'https://thermostat-control-api.herokuapp.com/';
-
-function Login({ navigation }) {
-    const [email, setEmail] = useState(null);
-    const [password, setPassword] = useState(null);
-
-    const { login } = useContext(AuthContext);
-
+function Signup({ navigation }) {
     return (
         <View style={{ flex: 1, display: "flex", alignContent: "center" }}>
-            <Image source={require("../../../assets/login.png")}
+            <Image source={require("../../../assets/signup.png")}
                 style={{ alignSelf: "center", marginTop: 30 }}></Image>
             <Card style={{ margin: 10, backgroundColor: "white" }}>
                 <Card.Content>
-                    <Text style={{ fontSize: 30, marginBottom: 20, fontWeight: "bold" }}>Login</Text>
-                    <TextInput secureTextEntry={true} style={styles.input} placeholder="Email" placeholderTextColor="#F5F5F"
-                        value={email} onChangeText={setEmail} />
-                    <TextInput secureTextEntry={true} style={styles.input} placeholder="Password" placeholderTextColor="#F5F5F"
-                        value={password} onChangeText={setPassword} />
+                    <Text style={{ fontSize: 30, marginBottom: 20, fontWeight: "bold" }}>Sign up</Text>
+                    <TextInput style={styles.input} placeholder="Email" placeholderTextColor="#F5F5F" />
+                    <TextInput secureTextEntry={true} style={styles.input} placeholder="Password" placeholderTextColor="#F5F5F" />
+                    <TextInput secureTextEntry={true} style={styles.input} placeholder="Password again" placeholderTextColor="#F5F5F" />
                     <View style={{ display: "flex", flexDirection: "row" }}>
                     </View>
-                    <Pressable style={styles.button} onPress={() => login(email, password)}>
-                        <Text style={styles.text}>Log In</Text>
+                    <Pressable style={styles.button}>
+                        <Text style={styles.text}>Sign up</Text>
                     </Pressable>
-                    <TouchableOpacity onPress={() => navigation.navigate("Signup")}>
-                        <Text style={styles.signup}>Sign up</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+                        <Text style={styles.signup}>Log in</Text>
                     </TouchableOpacity>
                 </Card.Content>
             </Card>
@@ -67,4 +57,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Login;
+export default Signup;

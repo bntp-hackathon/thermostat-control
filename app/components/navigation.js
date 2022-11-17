@@ -10,7 +10,7 @@ import OtherProductsPage from "./pages/other-products.page";
 
 //Screen names
 const homeName = "Home";
-const scenariosName = "Add scenario"
+const scenariosName = "Scenarios page"
 const otherProductsName = "Other products";
 const accountName = "Account";
 
