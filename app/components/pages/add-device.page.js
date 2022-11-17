@@ -2,7 +2,7 @@ import * as React from "react";
 import { View, Text } from "react-native";
 import Thermostat from "../devices/thermostat.device";
 
-function AddDevicePage({ navigation }) {
+function AddDevicePage({ route, navigation }) {
   return (
     <View style={{ flex: 1, margin: 30 }}>
       <Text style={{ fontSize: 24, fontWeight: "bold" }}>Добавить вручную</Text>
@@ -15,9 +15,18 @@ function AddDevicePage({ navigation }) {
         <Text style={{ fontSize: 20 }}>Термостаты</Text>
 
         <View style={{ flexDirection: "row" }}>
-          <Thermostat name="Thermostat 1" />
-          <Thermostat name="Thermostat 2" />
-          <Thermostat name="Thermostat 3" />
+          <Thermostat
+            name="Thermostat 1"
+            rerenderParent={route.params.rerenderParent}
+          />
+          <Thermostat
+            name="Thermostat 2"
+            rerenderParent={route.params.rerenderParent}
+          />
+          <Thermostat
+            name="Thermostat 3"
+            rerenderParent={route.params.rerenderParent}
+          />
         </View>
 
         <View style={{ flexDirection: "row", marginBottom: 34 }}>

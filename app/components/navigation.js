@@ -10,7 +10,7 @@ import OtherProductsPage from "./pages/other-products.page";
 
 //Screen names
 const homeName = "Home";
-const scenariosName = "Scenarios page"
+const scenariosName = "Scenarios page";
 const otherProductsName = "Other products";
 const accountName = "Account";
 
@@ -28,7 +28,7 @@ function MainContainer() {
           if (rn === homeName) {
             iconName = focused ? "home" : "home-outline";
           } else if (rn === otherProductsName) {
-            iconName = focused ? "list" : "list-outline"
+            iconName = focused ? "list" : "list-outline";
           } else if (rn === scenariosName) {
             iconName = focused ? "checkbox" : "checkbox-outline";
           } else if (rn === accountName) {
